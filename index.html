@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive test</title>
+
+  <style>
+    /* ---------- Base (desktop) ---------- */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Arial, sans-serif; line-height: 1.5; color:#222; }
+
+    header { background:#333; padding:16px 0; }
+    nav ul { display:flex; justify-content:center; gap:20px; list-style:none; }
+    nav a { color:#fff; text-decoration:none; padding:8px 12px; display:block; }
+
+    .hero { text-align:center; padding:32px 16px; background:#fafafa; }
+    .hero img { max-width:100%; height:auto; display:block; margin:16px auto; border-radius:6px; }
+
+    .container { display:flex; gap:20px; padding:24px; max-width:1100px; margin:0 auto; }
+    .column { flex:1; background:#f4f4f4; padding:20px; border-radius:8px; min-width:0; }
+    /* min-width:0 prevents flex children overflow on small screens */
+
+    footer { background:#333; color:#fff; padding:12px; text-align:center; }
+
+    /* small visual helpers */
+    h1 { font-size:28px; margin-bottom:8px; }
+    h2 { font-size:20px; margin-bottom:8px; }
+    p { margin-bottom:8px; }
+
+    /* ---------- Mobile / tablet rules ---------- */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;            /* stack nav vertically */
+        align-items: center;
+      }
+
+      .container {
+        flex-direction: column;           /* stack columns vertically */
+        padding:12px;
+      }
+
+      body { font-size:15px; }            /* slightly smaller base font */
+      h1 { font-size:20px; }
+      h2 { font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Responsive test page</h1>
+      <p>Shrink the window or use device toolbar to see the mobile layout.</p>
+      <img src="https://via.placeholder.com/900x300.png?text=Responsive+Image" alt="sample">
+    </section>
+
+    <section class="container">
+      <div class="column">
+        <h2>Column One</h2>
+        <p>Some text here to show wrapping and spacing. Resize the window to test.</p>
+      </div>
+      <div class="column">
+        <h2>Column Two</h2>
+        <p>More text. Images and flex boxes should not cause horizontal scrolling.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2025 Example</footer>
+</body>
+</html>
